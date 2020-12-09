@@ -15,7 +15,8 @@ def get_padding(file_to_corrupt = "vuln3-32-test"):
     output = output.decode('utf-8').split("\n")
     padding_str = [x for x in output if x.find('loc = ') > -1][0]
     padding = int(padding_str[7:])
-    print(padding)
+    return padding
 
 if (__name__ == "__main__"):
-    get_padding()
+    padding = get_padding("vuln3-32")
+    print(padding)
