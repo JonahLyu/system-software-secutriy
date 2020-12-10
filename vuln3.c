@@ -4,7 +4,7 @@
 #include <errno.h>
 int copyData(char *string)
 {
-	char buf[32];
+	char buf[20];
 	strcpy(buf, string);
 	return (0);
 }
