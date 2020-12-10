@@ -5,4 +5,4 @@ vuln3:
 
 ex:
 	python3 auto-exploit.py vuln3-32 command.txt
-	./vuln3-32 nc.bin
+	./vuln3-32 exploit.bin
