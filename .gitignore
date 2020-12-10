@@ -3,3 +3,4 @@ ROPgadget-master/
 netcat-0.7.1
 *.zip
 .vscode
+__pycache__
