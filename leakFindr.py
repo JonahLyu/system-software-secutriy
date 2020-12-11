@@ -1,11 +1,12 @@
-import gdb
+import gdb,sys
+import re
 
 def stopHandler(msg):
     if (msg.stop_signal == "SIGSEGV"):
         info_out = gdb.execute("info reg eip", to_string = True)
-        reg_split = info_out.split(" ")
+        info_out.replace("\t", " ")
+        reg_split= re.split(' |\t', info_out)
         reg_split = [x for x in reg_split if x != '']
-        print(reg_split[1][2:])
         eip_val_as_str = bytearray.fromhex(reg_split[1][2:]).decode()
         print(eip_val_as_str)
 
@@ -17,4 +18,4 @@ def stopHandler(msg):
 gdb.events.stop.connect(stopHandler)
 
 gdb.execute("r junk.txt")
-gdb.execute("quit")
+sys.exit(0)

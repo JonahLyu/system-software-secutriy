@@ -18,4 +18,5 @@ def get_padding(file_to_corrupt = "vuln3-32-test"):
     return padding
 
 if (__name__ == "__main__"):
-    get_padding()
+    padding = get_padding("vuln3-32")
+    print(padding)
