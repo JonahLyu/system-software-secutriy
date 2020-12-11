@@ -4,3 +4,4 @@ netcat-0.7.1
 *.zip
 .vscode
 __pycache__
+ROP_data
